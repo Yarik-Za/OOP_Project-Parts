@@ -1,6 +1,4 @@
 using Project_part_A.Classes;
-using Project_part_A.Interfaces;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace A_UnitTests
 {
