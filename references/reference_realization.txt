@@ -1,0 +1,47 @@
+public interface ISubject
+{
+    string SubjectName { get; set; }
+}
+
+
+public class Student
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int Age { get; set; }
+    public List<ISubject> Subjects { get; set; }
+
+    // Конструктор та інші методи
+}
+
+public class Subject : ISubject
+{
+    public string SubjectName { get; set; }
+    public Teacher Teacher { get; set; }
+
+    // Конструктор та інші методи
+}
+
+public class SchoolClass
+{
+    public List<Student> Students { get; set; }
+    public Teacher ClassTeacher { get; set; }
+
+    // Конструктор та інші методи
+}
+
+public class Teacher
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public List<ISubject> SubjectsTaught { get; set; }
+
+    // Конструктор та інші методи
+}
+
+public class LabWork : ISubject
+{
+    public string SubjectName { get; set; }
+
+    // Конструктор та інші методи
+}
