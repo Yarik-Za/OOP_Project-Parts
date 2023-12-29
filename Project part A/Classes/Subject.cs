@@ -7,18 +7,18 @@
 
         public Subject(string name, Teacher teacher)
         {
-            throw new NotImplementedException();
+            Name = name;
+            Teacher = teacher;
         }
 
         public string GetName()
         {
-            throw new NotImplementedException();
+            return Name;
         }
 
         public Teacher GetTeacher()
         {
-            throw new NotImplementedException();
+            return Teacher;
         }
     }
-
 }
