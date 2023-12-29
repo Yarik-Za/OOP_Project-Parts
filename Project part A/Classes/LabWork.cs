@@ -4,43 +4,50 @@ namespace Project_part_A.Classes
 {
     public class LabWork : IPrintable
     {
-        public List<SchoolClass> Classes { get; set; } = new List<SchoolClass>();
+        public SchoolClass Class { get; set; }
         public List<Teacher> Teachers { get; set; } = new List<Teacher>();
         public List<Student> Students { get; set; } = new List<Student>();
 
-        public void AddClass(SchoolClass schoolClass)
+        public LabWork(SchoolClass schoolclass)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<SchoolClass> GetClasses()
-        {
-            throw new NotImplementedException();
+            Class = schoolclass;
         }
 
         public void AddTeacher(Teacher teacher)
         {
-            throw new NotImplementedException();
+            Teachers.Add(teacher);
         }
 
         public List<Teacher> GetTeachers()
         {
-            throw new NotImplementedException();
+            return Teachers;
         }
 
         public void AddStudent(Student student)
         {
-            throw new NotImplementedException();
+            Students.Add(student);
         }
 
         public List<Student> GetStudents()
         {
-            throw new NotImplementedException();
+            return Students;
         }
 
         public void PrintToDisplay()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Лабораторна робота класу " + Class.ClassNumber);
+            string result = "";
+            foreach (var teacher in Teachers)
+            {
+                result += teacher.FirstName + " " + teacher.LastName + ", ";
+            }
+            Console.WriteLine("Відповідальні за виконання роботи вчителі: " + result);
+            result = "";
+            foreach (var student in Students)
+            {
+                result += student.FirstName + " " + student.LastName + ", ";
+            }
+            Console.WriteLine("Допущені до виконання роботи учні: " + result);
         }
     }
 }
