@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using Project_part_A.Interfaces;
 
 namespace Project_part_A.Classes
 {
@@ -11,5 +8,11 @@ namespace Project_part_A.Classes
         public abstract string FirstName { get; set; }
         public abstract string LastName { get; set; }
         public abstract int Age { get; set; }
+
+        public override string ToString()
+        {
+            return $"{FirstName} {LastName}, вік: {Age}";
+        }
+
     }
 }

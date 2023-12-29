@@ -26,5 +26,10 @@
         {
             return ClassTeacher;
         }
+
+        public override string ToString() { 
+            string res = $"номер класу: {ClassNumber}, класний керівник :{ClassTeacher.ToString()} ";
+            return res; 
+        }
     }
 }
