@@ -1,26 +1,28 @@
-﻿using Project_part_A.Interfaces;
-namespace Project_part_A.Classes
+﻿namespace Project_part_A.Classes
 {
-    public class Student : IPerson
+    public class Student : Person
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
+        private int age;
+        public override string FirstName { get; set; }
+        public override string LastName { get; set; }
+        public override int Age { get => age; set => age = value; }
         public List<Subject> ChosenSubjects { get; set; } = new List<Subject>();
 
         public Student(string firstName, string lastName, int age)
         {
-            throw new NotImplementedException();
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
         }
 
-        public void ChooseSubject(Subject subject)
+        public virtual void ChooseSubject(Subject subject)
         {
-            throw new NotImplementedException();
+            ChosenSubjects.Add(subject);
         }
 
         public List<Subject> GetEnrolledSubjects()
         {
-            throw new NotImplementedException();
+            return ChosenSubjects;
         }
     }
 }
