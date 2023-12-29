@@ -1,27 +1,43 @@
-﻿using Project_part_A.Interfaces;
-
-namespace Project_part_A.Classes
+﻿namespace Project_part_A.Classes
 {
-    public class Teacher : IPerson
+    public class Teacher : Person, ICloneable
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
+        private int age;
+        public override string FirstName { get; set; }
+        public override string LastName { get; set; }
+        public override int Age
+        {
+            get => age; set
+            {
+                if (value < 23)
+                {
+                    throw new Exception("Надто молодий для вчителя");
+                }
+                age = value;
+            }
+        }
         public List<Subject> TaughtSubjects { get; set; } = new List<Subject>();
 
-        public Teacher(string firstName, string lastName)
+        public Teacher(string firstName, string lastName, int age)
         {
-            throw new NotImplementedException();
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
         }
 
         public void AddTaughtSubject(Subject subject)
         {
-            throw new NotImplementedException();
+            TaughtSubjects.Add(subject);
         }
 
         public List<Subject> GetTaughtSubjects()
         {
-            throw new NotImplementedException();
+            return TaughtSubjects;
+        }
+
+        public object Clone()
+        {
+            return new Teacher(FirstName, LastName, Age);
         }
     }
 }
