@@ -8,22 +8,23 @@
 
         public SchoolClass(int classNumber, Teacher classTeacher)
         {
-            throw new NotImplementedException();
+            ClassNumber = classNumber;
+            ClassTeacher = classTeacher;
         }
 
         public void AddStudent(Student student)
         {
-            throw new NotImplementedException();
+            Students.Add(student);
         }
 
         public List<Student> GetStudents()
         {
-            throw new NotImplementedException();
+            return Students;
         }
 
         public Teacher GetClassTeacher()
         {
-            throw new NotImplementedException();
+            return ClassTeacher;
         }
     }
 }
