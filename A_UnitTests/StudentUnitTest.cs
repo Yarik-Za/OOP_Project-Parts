@@ -1,4 +1,6 @@
 using Project_part_A.Classes;
+using Project_part_A.Interfaces;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace A_UnitTests
 {
@@ -10,7 +12,7 @@ namespace A_UnitTests
         {
             // Arrange
             var student = new Student("John", "Doe", 18);
-            var subject = new Subject("Math", new Teacher("Mr.", "Smith"));
+            var subject = new Subject("Math", new Teacher("Mr.", "Smith", 37));
 
             // Act
             student.ChooseSubject(subject);
@@ -24,8 +26,8 @@ namespace A_UnitTests
         {
             // Arrange
             var student = new Student("Jane", "Doe", 17);
-            var mathSubject = new Subject("Math", new Teacher("Ms.", "Jones"));
-            var englishSubject = new Subject("English", new Teacher("Mrs.", "Brown"));
+            var mathSubject = new Subject("Math", new Teacher("Ms.", "Jones", 37));
+            var englishSubject = new Subject("English", new Teacher("Mrs.", "Brown", 37));
             student.ChooseSubject(mathSubject);
             student.ChooseSubject(englishSubject);
 

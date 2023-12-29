@@ -1,4 +1,6 @@
 using Project_part_A.Classes;
+using Project_part_A.Interfaces;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace A_UnitTests
 {
@@ -9,7 +11,7 @@ namespace A_UnitTests
         public void Subject_GetName_ReturnsSubjectName()
         {
             // Arrange
-            var teacher = new Teacher("Mr.", "Johnson");
+            var teacher = new Teacher("Mr.", "Johnson", 37);
             var subject = new Subject("Math", teacher);
 
             // Act
@@ -23,7 +25,7 @@ namespace A_UnitTests
         public void Subject_GetTeacher_ReturnsAssignedTeacher()
         {
             // Arrange
-            var teacher = new Teacher("Ms.", "Brown");
+            var teacher = new Teacher("Ms.", "Brown", 37);
             var subject = new Subject("English", teacher);
 
             // Act

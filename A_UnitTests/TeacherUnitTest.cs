@@ -1,4 +1,6 @@
 using Project_part_A.Classes;
+using Project_part_A.Interfaces;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace A_UnitTests
 {
@@ -9,7 +11,7 @@ namespace A_UnitTests
         public void Teacher_AddTaughtSubject_AddsSubjectToTaughtSubjects()
         {
             // Arrange
-            var teacher = new Teacher("Mr.", "Johnson");
+            var teacher = new Teacher("Mr.", "Johnson", 37);
             var subject = new Subject("History", teacher);
 
             // Act
@@ -23,7 +25,7 @@ namespace A_UnitTests
         public void Teacher_GetTaughtSubjects_ReturnsTaughtSubjects()
         {
             // Arrange
-            var teacher = new Teacher("Mrs.", "Williams");
+            var teacher = new Teacher("Mrs.", "Williams", 37);
             var mathSubject = new Subject("Math", teacher);
             var physicsSubject = new Subject("Physics", teacher);
             teacher.AddTaughtSubject(mathSubject);
@@ -36,6 +38,18 @@ namespace A_UnitTests
             Assert.AreEqual(2, taughtSubjects.Count);
             CollectionAssert.Contains(taughtSubjects, mathSubject);
             CollectionAssert.Contains(taughtSubjects, physicsSubject);
+        }
+        [TestMethod]
+        public void Teacher_TestCloneMethod()
+        {
+            // Arrange
+            var teacher = new Teacher("Mrs.", "Williams", 37);
+
+            // Act
+            var cloneteacher = teacher.Clone();
+
+            //Assert
+            Assert.AreNotSame(teacher, cloneteacher);
         }
     }
 }
